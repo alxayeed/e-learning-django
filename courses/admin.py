@@ -4,7 +4,7 @@ from .models import Subject, Course, Module
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug']
+    list_display = ['id', 'title', 'slug']
     prepopulated_fields = {'slug': ('title',)}
 
 
@@ -13,7 +13,7 @@ class ModuleAdmin(admin.StackedInline):
 
 
 @admin.register(Course)
-class CourseAdmin(admin.ModuleAdmin):
+class CourseAdmin(admin.ModelAdmin):
     list_display = ['title', 'subject', 'created']
     list_filter = ['created', 'subject']
     search_fields = ['title', 'overview']
