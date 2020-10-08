@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from educa import env
 from django.urls import reverse_lazy
@@ -26,6 +27,8 @@ INSTALLED_APPS = [
     # my apps
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    # third-party app
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +112,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# settings for Media file
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

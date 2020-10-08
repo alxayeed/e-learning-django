@@ -17,7 +17,7 @@
     <div id="header">
         <a href="/" class="logo"> Elearn</a>
         <ul class="menu">
-            {% if request.user.is_authenthicated %}
+            {% if request.user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Sign out</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Sign in</a></li>
