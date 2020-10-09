@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     # third-party app
     'embed_video',
+    'memcache-status',
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,11 @@ STATIC_URL = '/static/'
 # settings for Media file
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# CHACHE CONFIGURATION
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
