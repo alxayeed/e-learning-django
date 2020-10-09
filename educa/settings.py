@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     # third-party app
     'embed_video',
-    'memcache-status',
+    'memcache_status',
 ]
 
 MIDDLEWARE = [
