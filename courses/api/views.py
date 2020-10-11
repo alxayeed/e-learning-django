@@ -46,8 +46,11 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CourseSerializer
 
     @action(detail=True,
-            methods=['post'])
+            methods=['post'],
+            authentication_classes=[BasicAuthentication],
+            permission_classes=[IsAuthenticated])
     def enroll(self, request, *args, **kwargs):
+        print('hello')
         course = self.get_object()
         course.students.add(request.user)
         return Response({'enrolled': True})
