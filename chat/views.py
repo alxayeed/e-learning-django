@@ -8,7 +8,6 @@ def course_chat_room(request, course_id):
     try:
         # retrieve course with given id
         course = request.user.courses_joined.get(id=course_id)
-        print(course)
     except:
         # user is not in the course or course does not exist
         return HttpResponseForbidden()
