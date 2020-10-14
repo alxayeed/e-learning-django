@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     # my apps
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'chat.apps.ChatConfig',
     # third-party app
     'embed_video',
     'memcache_status',
