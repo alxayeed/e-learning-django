@@ -19,7 +19,7 @@ class Subject(models.Model):
 
 class Course(models.Model):
     students = models.ManyToManyField(User,
-                                      related_name='courses_joinded',
+                                      related_name='courses_joined',
                                       blank=True)
     owner = models.ForeignKey(User,
                               related_name="courses_created",
